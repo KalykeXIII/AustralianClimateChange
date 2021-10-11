@@ -1,9 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
-        "format": {"type": "topojson", "feature": "countries"}
-      },
+    "width": 800,
+    "height": 600,
+    "projection": {
+        "type": "equalEarth"
+    },
+
     "params": [
         {
             "name": "year_slider",
@@ -17,12 +19,13 @@
             }
         }
     ],
-    "hconcat":[
+
+    "layer":[
       {
-        "width": 800,
-        "height": 600,
-        "projection": {
-        "type": "equalEarth"},
+        "data": {
+            "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+            "format": {"type": "topojson", "feature": "countries"}
+        },
         "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.4},
         "encoding": {
           "color": {"value": "#eee"}, 
@@ -30,15 +33,41 @@
         }
       },
       {
-        "width": 800,
-        "height": 600,
-        "projection": {
-        "type": "equalEarth"},
+        "data": {
+            "url": "data/annual-co2-emissions-per-country.csv"
+        },
+        "transform": [
+            {
+                "lookup": "Entity",
+                "from": {
+                    "data": {
+                        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+                        "format": {"type": "topojson", "feature": "countries"}
+                    },
+                    "key": "properties.name"
+                },
+                "as": "country"
+            },
+            {"filter": "datum.Year == year_slider"}
+        ],
         "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.4},
         "encoding": {
-          "color": {"value": "#eee"}, 
-          "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country" }]
+            "shape": {"field": "country", "type": "geojson"},
+            "color": {
+                "field": "Emissions",
+                "type": "quantitative",
+                "scale": {
+                    "domain": [
+                        0,
+                        5000000000
+                    ],
+                    "scheme": "reds"
+                }
+            },
+            "tooltip": [{"field": "Entity", "type": "nominal", "title": "Country" },
+                        {"field": "Year", "type": "quantitative", "title": "Year"}]
         }
       }
-    ]
+    ],
+    "config": {}
 }

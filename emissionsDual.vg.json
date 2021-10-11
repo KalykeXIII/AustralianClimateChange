@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+        "format": {"type": "topojson", "feature": "countries"}
+      },
+    "params": [
+        {
+            "name": "year_slider",
+            "value": 2019,
+            "bind": {
+                "input": "range",
+                "min": 1919,
+                "max": 2019,
+                "step": 1,
+                "name": "Year: "
+            }
+        }
+    ],
+    "hconcat":[
+      {
+        "width": 800,
+        "height": 600,
+        "projection": {
+        "type": "equalEarth"},
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.4},
+        "encoding": {
+          "color": {"value": "#eee"}, 
+          "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country" }]
+        }
+      },
+      {
+        "width": 800,
+        "height": 600,
+        "projection": {
+        "type": "equalEarth"},
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.4},
+        "encoding": {
+          "color": {"value": "#eee"}, 
+          "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country" }]
+        }
+      }
+    ]
+}
