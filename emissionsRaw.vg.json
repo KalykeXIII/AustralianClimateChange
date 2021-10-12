@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 450,
+    "projection": {
+        "type": "equalEarth"
+    },
+
+    "params": [
+        {
+            "name": "year_slider",
+            "value": 2019,
+            "bind": {
+                "input": "range",
+                "min": 1919,
+                "max": 2019,
+                "step": 1,
+                "name": "Year: "
+            }
+        }
+    ],
+
+    "layer":[
+      {
+        "data": {
+            "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+            "format": {"type": "topojson", "feature": "countries"}
+        },
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.4},
+        "encoding": {
+          "color": {"value": "#eee"}, 
+          "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country" }]
+        }
+      },
+      {
+        "data": {
+            "url": "data/annual-co2-emissions-per-country.csv"
+        },
+        "transform": [
+            {
+                "lookup": "Entity",
+                "from": {
+                    "data": {
+                        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+                        "format": {"type": "topojson", "feature": "countries"}
+                    },
+                    "key": "properties.name"
+                },
+                "as": "country"
+            },
+            {"filter": "datum.Year == year_slider"}
+        ],
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.4},
+        "encoding": {
+            "shape": {"field": "country", "type":"geojson"},
+            "color": {
+                "field": "Emissions",
+                "type": "quantitative",
+                "scale": {
+                    "scheme": "reds"
+                }
+            },
+            "tooltip": [{"field": "Entity", "type": "nominal", "title": "Country" },
+                        {"field": "Year", "type": "quantitative", "title": "Year"},
+                        {"field": "Emissions", "type": "quantitative", "title": "Emissions"}]
+        }
+      }
+    ],
+    "config": {}
+}
