@@ -1,20 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 
-    <style>
-        /* Set additional styling options for the columns*/
-        .column {
-        float: left;
-        width: 50%;
-        }
-    
-        .row:after {
-        content: "";
-        display: table;
-        clear: both;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="images/pageIcon.png">
+
+    <!--Google Font link-->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootsnav.css">
+
+    <!--Theme custom css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Theme Responsive css-->
+    <link rel="stylesheet" href="css/responsive.css">
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,64 +32,62 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
     <script src="js/vega_load.js"></script>
 
-    <title>Australian Climate Action</title>
+    <title>Australian Climate 'Action'</title>
 </head>
+
 <body>
 
-    <h1 style="text-align: center;">Exploring the climate inaction in Australia</h1>
+
+    <h1 style="text-align: center;">Explaining the climate inaction in Australia</h1>
 
 
     <div id="introduction" style="text-align: center; width: 1500px; margin: 0 auto;">
         <br><br>
         <h3>Introduction</h3>
-
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla non ligula congue viverra. Donec viverra turpis mi, quis malesuada dolor convallis ut. Proin faucibus mollis vulputate. Sed suscipit semper dui ac convallis. Vestibulum blandit in enim sit amet porttitor. Morbi vitae vestibulum nunc. Donec ut dolor quis orci porttitor semper. Nam varius in orci nec luctus.</p>
-
-        <p>Sed pellentesque vitae elit scelerisque semper. Aliquam sit amet orci nec nibh semper rhoncus. Maecenas eu ex nec ipsum varius imperdiet id non turpis. Praesent sed tincidunt est. Etiam sagittis facilisis velit id lobortis. Vivamus eu libero ut justo ultrices porta nec ac nibh. Nullam aliquam, metus nec facilisis volutpat, leo nibh egestas enim, ac facilisis mauris nibh quis urna. Nullam at fringilla ligula, non consequat mauris.</p>
-            
+        <p>Sed pellentesque vitae elit scelerisque semper. Aliquam sit amet orci nec nibh semper rhoncus. Maecenas eu ex nec ipsum varius imperdiet id non turpis. Praesent sed tincidunt est. Etiam sagittis facilisis velit id lobortis. Vivamus eu libero ut justo ultrices porta nec ac nibh. Nullam aliquam, metus nec facilisis volutpat, leo nibh egestas enim, ac facilisis mauris nibh quis urna. Nullam at fringilla ligula, non consequat mauris.</p>           
         <p>Vestibulum vel purus vel ipsum tempus eleifend. Aliquam magna ex, malesuada vitae elit nec, aliquet venenatis nisl. Nulla non velit lacus. Quisque a velit vel augue condimentum tristique. Donec pulvinar varius erat pharetra pulvinar. Phasellus bibendum sollicitudin auctor. Vestibulum venenatis semper sapien, at fermentum nibh convallis eu. Integer laoreet vehicula libero quis suscipit. Duis feugiat ante tortor, vitae semper arcu rhoncus mollis. Nunc porta sed lacus a fringilla. Proin pellentesque, libero nec hendrerit dapibus, nisi nisi tempor tellus, vitae pellentesque libero magna eu tortor. Sed venenatis commodo pretium. Ut laoreet eu lectus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
         <br><br>
     </div>
 
+    <section id="emissions">
 
-    <div id="emissionsRaw" style="text-align: center; padding: 20px 100px 0px;" class="row">
+        <div id="emissionsRaw" style="text-align: center; padding: 20px 100px 0px;" class="row">
 
-        <!-- Explanatory text for the raw emissions visualisation-->
-        <div id="rawText" class="column" style="text-align: center; vertical-align: middle;">
-            <br><br>
-            <h3>Raw Emissions per Country</h3>
+            <!-- Explanatory text for the raw emissions visualisation-->
+            <div id="rawText" class="column" style="text-align: center; vertical-align: middle;">
+                <br>
+                <h3>Raw Emissions per Country</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla non ligula congue viverra. Donec viverra turpis mi, quis malesuada dolor convallis ut. Proin faucibus mollis vulputate. Sed suscipit semper dui ac convallis. Vestibulum blandit in enim sit amet porttitor. Morbi vitae vestibulum nunc. Donec ut dolor quis orci porttitor semper. Nam varius in orci nec luctus.</p>
+                <p>Sed pellentesque vitae elit scelerisque semper. Aliquam sit amet orci nec nibh semper rhoncus. Maecenas eu ex nec ipsum varius imperdiet id non turpis. Praesent sed tincidunt est. Etiam sagittis facilisis velit id lobortis. Vivamus eu libero ut justo ultrices porta nec ac nibh. Nullam aliquam, metus nec facilisis volutpat, leo nibh egestas enim, ac facilisis mauris nibh quis urna. Nullam at fringilla ligula, non consequat mauris.</p>  
+                <p>Vestibulum vel purus vel ipsum tempus eleifend. Aliquam magna ex, malesuada vitae elit nec, aliquet venenatis nisl. Nulla non velit lacus. Quisque a velit vel augue condimentum tristique. Donec pulvinar varius erat pharetra pulvinar. Phasellus bibendum sollicitudin auctor. Vestibulum venenatis semper sapien, at fermentum nibh convallis eu. Integer laoreet vehicula libero quis suscipit. Duis feugiat ante tortor, vitae semper arcu rhoncus mollis. Nunc porta sed lacus a fringilla. Proin pellentesque, libero nec hendrerit dapibus, nisi nisi tempor tellus, vitae pellentesque libero magna eu tortor. Sed venenatis commodo pretium. Ut laoreet eu lectus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla non ligula congue viverra. Donec viverra turpis mi, quis malesuada dolor convallis ut. Proin faucibus mollis vulputate. Sed suscipit semper dui ac convallis. Vestibulum blandit in enim sit amet porttitor. Morbi vitae vestibulum nunc. Donec ut dolor quis orci porttitor semper. Nam varius in orci nec luctus.</p>
+            <!-- Raw Emissions Vega-Lite Embed-->
+            <div id="rawEmissions" class="column"></div>
 
-            <p>Sed pellentesque vitae elit scelerisque semper. Aliquam sit amet orci nec nibh semper rhoncus. Maecenas eu ex nec ipsum varius imperdiet id non turpis. Praesent sed tincidunt est. Etiam sagittis facilisis velit id lobortis. Vivamus eu libero ut justo ultrices porta nec ac nibh. Nullam aliquam, metus nec facilisis volutpat, leo nibh egestas enim, ac facilisis mauris nibh quis urna. Nullam at fringilla ligula, non consequat mauris.</p>
-                
-            <p>Vestibulum vel purus vel ipsum tempus eleifend. Aliquam magna ex, malesuada vitae elit nec, aliquet venenatis nisl. Nulla non velit lacus. Quisque a velit vel augue condimentum tristique. Donec pulvinar varius erat pharetra pulvinar. Phasellus bibendum sollicitudin auctor. Vestibulum venenatis semper sapien, at fermentum nibh convallis eu. Integer laoreet vehicula libero quis suscipit. Duis feugiat ante tortor, vitae semper arcu rhoncus mollis. Nunc porta sed lacus a fringilla. Proin pellentesque, libero nec hendrerit dapibus, nisi nisi tempor tellus, vitae pellentesque libero magna eu tortor. Sed venenatis commodo pretium. Ut laoreet eu lectus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
 
-        <!-- Raw Emissions Vega-Lite Embed-->
-        <div id="rawEmissions" class="column"></div>
+        <div id="emissionsCapita" style="text-align: center; padding: 20px 100px 0px;" class="row">
 
-    </div>
+            <!-- Per Capita Emissions Vega-Lite Embed-->
+            <div id="capitaEmissions" class="column"></div>
 
-    <div id="emissionsCapita" style="text-align: center; padding: 20px 100px 0px;" class="row">
+            <!-- Explanatory text for the per capita emissions visualisation-->
+            <div id="capitaText" class="column" style="text-align: center; vertical-align: middle;">
+                <br>
+                <h3>Emissions per Capita</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla non ligula congue viverra. Donec viverra turpis mi, quis malesuada dolor convallis ut. Proin faucibus mollis vulputate. Sed suscipit semper dui ac convallis. Vestibulum blandit in enim sit amet porttitor. Morbi vitae vestibulum nunc. Donec ut dolor quis orci porttitor semper. Nam varius in orci nec luctus.</p>
+                <p>Sed pellentesque vitae elit scelerisque semper. Aliquam sit amet orci nec nibh semper rhoncus. Maecenas eu ex nec ipsum varius imperdiet id non turpis. Praesent sed tincidunt est. Etiam sagittis facilisis velit id lobortis. Vivamus eu libero ut justo ultrices porta nec ac nibh. Nullam aliquam, metus nec facilisis volutpat, leo nibh egestas enim, ac facilisis mauris nibh quis urna. Nullam at fringilla ligula, non consequat mauris.</p>
+                <p>Vestibulum vel purus vel ipsum tempus eleifend. Aliquam magna ex, malesuada vitae elit nec, aliquet venenatis nisl. Nulla non velit lacus. Quisque a velit vel augue condimentum tristique. Donec pulvinar varius erat pharetra pulvinar. Phasellus bibendum sollicitudin auctor. Vestibulum venenatis semper sapien, at fermentum nibh convallis eu. Integer laoreet vehicula libero quis suscipit. Duis feugiat ante tortor, vitae semper arcu rhoncus mollis. Nunc porta sed lacus a fringilla. Proin pellentesque, libero nec hendrerit dapibus, nisi nisi tempor tellus, vitae pellentesque libero magna eu tortor. Sed venenatis commodo pretium. Ut laoreet eu lectus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
 
-        <!-- Per Capita Emissions Vega-Lite Embed-->
-        <div id="capitaEmissions" class="column"></div>
-
-        <!-- Explanatory text for the per capita emissions visualisation-->
-        <div id="capitaText" class="column" style="text-align: center; vertical-align: middle;">
-            <br><br>
-            <h3>Emissions per Capita</h3>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla non ligula congue viverra. Donec viverra turpis mi, quis malesuada dolor convallis ut. Proin faucibus mollis vulputate. Sed suscipit semper dui ac convallis. Vestibulum blandit in enim sit amet porttitor. Morbi vitae vestibulum nunc. Donec ut dolor quis orci porttitor semper. Nam varius in orci nec luctus.</p>
-
-            <p>Sed pellentesque vitae elit scelerisque semper. Aliquam sit amet orci nec nibh semper rhoncus. Maecenas eu ex nec ipsum varius imperdiet id non turpis. Praesent sed tincidunt est. Etiam sagittis facilisis velit id lobortis. Vivamus eu libero ut justo ultrices porta nec ac nibh. Nullam aliquam, metus nec facilisis volutpat, leo nibh egestas enim, ac facilisis mauris nibh quis urna. Nullam at fringilla ligula, non consequat mauris.</p>
-                
-            <p>Vestibulum vel purus vel ipsum tempus eleifend. Aliquam magna ex, malesuada vitae elit nec, aliquet venenatis nisl. Nulla non velit lacus. Quisque a velit vel augue condimentum tristique. Donec pulvinar varius erat pharetra pulvinar. Phasellus bibendum sollicitudin auctor. Vestibulum venenatis semper sapien, at fermentum nibh convallis eu. Integer laoreet vehicula libero quis suscipit. Duis feugiat ante tortor, vitae semper arcu rhoncus mollis. Nunc porta sed lacus a fringilla. Proin pellentesque, libero nec hendrerit dapibus, nisi nisi tempor tellus, vitae pellentesque libero magna eu tortor. Sed venenatis commodo pretium. Ut laoreet eu lectus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </div>
 
-    </div>
+    </section>  
 
+    <!-- <a> href='https://www.freepik.com/vectors/abstract'>Abstract vector created by vectorjuice - www.freepik.com</a> -->
 </body>
+
 </html>
