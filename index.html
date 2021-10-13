@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" style="background-color: #6d88ed;">
 
 <head>
 
@@ -24,28 +24,45 @@
     <title>Australian Climate 'Action'</title>
 </head>
 
-<body>
-
+<body style="margin: 0 auto; width: 90%; background-color: whitesmoke;">
 
     <h1 style="text-align: center;">Explaining the climate inaction in Australia</h1>
 
+    <br><br>
 
-    <div id="introduction" style="text-align: center; width: 1500px; margin: 0 auto;">
-        <br><br>
-        <h3>Introduction</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla non ligula congue viverra. Donec viverra turpis mi, quis malesuada dolor convallis ut. Proin faucibus mollis vulputate. Sed suscipit semper dui ac convallis. Vestibulum blandit in enim sit amet porttitor. Morbi vitae vestibulum nunc. Donec ut dolor quis orci porttitor semper. Nam varius in orci nec luctus.</p>
-        <p>Sed pellentesque vitae elit scelerisque semper. Aliquam sit amet orci nec nibh semper rhoncus. Maecenas eu ex nec ipsum varius imperdiet id non turpis. Praesent sed tincidunt est. Etiam sagittis facilisis velit id lobortis. Vivamus eu libero ut justo ultrices porta nec ac nibh. Nullam aliquam, metus nec facilisis volutpat, leo nibh egestas enim, ac facilisis mauris nibh quis urna. Nullam at fringilla ligula, non consequat mauris.</p>           
-        <p>Vestibulum vel purus vel ipsum tempus eleifend. Aliquam magna ex, malesuada vitae elit nec, aliquet venenatis nisl. Nulla non velit lacus. Quisque a velit vel augue condimentum tristique. Donec pulvinar varius erat pharetra pulvinar. Phasellus bibendum sollicitudin auctor. Vestibulum venenatis semper sapien, at fermentum nibh convallis eu. Integer laoreet vehicula libero quis suscipit. Duis feugiat ante tortor, vitae semper arcu rhoncus mollis. Nunc porta sed lacus a fringilla. Proin pellentesque, libero nec hendrerit dapibus, nisi nisi tempor tellus, vitae pellentesque libero magna eu tortor. Sed venenatis commodo pretium. Ut laoreet eu lectus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <nav>
+        <div id="navbar-menu">
+            <ul style="white-space:nowrap; height: auto;">
+                <li><a href="#home"><h5>Introduction</h5></a></li>
+                <li><a href="#first"><h5>Heads in the Sand</h5></a></li>
+                <li><a href="#second"><h5>Section 2</h5></a></li>
+                <li><a href="#third"><h5>Section 3</h5></a></li>
+            </ul>
+        </div>
+    </nav>
+    <br><br>
 
-        <br><br>
-    </div>
+    <section id="home">
+        <div id="introduction" style="text-align: center; width: 1000px; margin: 0 auto;" class="text-body">
+            <br><br>
+            <h2>Introduction</h2>
+            <br>
+            <p>Undeniably one of the greatest challenges of the 21st century, Climate Change is a matter of global concern. As a result, numerous countries around the world have begun to make preventing climate change their number 1 priority.</p>
+            <p>Unfortunately, Australia is not one of such nations. Having stalled and resisted commitment to targets consistently, Australia’s climate change policy leaves much to be desired. However, if climate change is so serious why does Australia keep being allowed to stall, and exactly how bad is it?</p>
+            <p>In this visualisation I aim to explore these questions by considering some of the common excuses used to delay climate action, providing a look into what must be done, and how that may be achieved.</p>
+            <br><br>
+        </div>
+    </section>
 
-    <section id="emissions">
+    <section id="first">
+
+        <h2 style="text-align: center; width: 1500px; margin: 0 auto;">Heads in the Sand</h2>
+        <br>
 
         <div id="emissionsRaw" style="text-align: center; padding: 20px 100px 0px;" class="row">
 
             <!-- Explanatory text for the raw emissions visualisation-->
-            <div id="rawText" class="column" style="text-align: center; vertical-align: middle;">
+            <div id="rawText" class="column" style="text-align: center; vertical-align: middle; padding-right: 80px">
                 <br>
                 <h3>Raw Emissions per Country</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla non ligula congue viverra. Donec viverra turpis mi, quis malesuada dolor convallis ut. Proin faucibus mollis vulputate. Sed suscipit semper dui ac convallis. Vestibulum blandit in enim sit amet porttitor. Morbi vitae vestibulum nunc. Donec ut dolor quis orci porttitor semper. Nam varius in orci nec luctus.</p>
@@ -55,7 +72,6 @@
 
             <!-- Raw Emissions Vega-Lite Embed-->
             <div id="rawEmissions" class="column"></div>
-
         </div>
 
         <div id="emissionsCapita" style="text-align: center; padding: 20px 100px 0px;" class="row">
@@ -64,15 +80,21 @@
             <div id="capitaEmissions" class="column"></div>
 
             <!-- Explanatory text for the per capita emissions visualisation-->
-            <div id="capitaText" class="column" style="text-align: center; vertical-align: middle;">
+            <div id="capitaText" class="column" style="text-align: center; vertical-align: middle; padding-left: 80px">
                 <br>
                 <h3>Emissions per Capita</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus nulla non ligula congue viverra. Donec viverra turpis mi, quis malesuada dolor convallis ut. Proin faucibus mollis vulputate. Sed suscipit semper dui ac convallis. Vestibulum blandit in enim sit amet porttitor. Morbi vitae vestibulum nunc. Donec ut dolor quis orci porttitor semper. Nam varius in orci nec luctus.</p>
                 <p>Sed pellentesque vitae elit scelerisque semper. Aliquam sit amet orci nec nibh semper rhoncus. Maecenas eu ex nec ipsum varius imperdiet id non turpis. Praesent sed tincidunt est. Etiam sagittis facilisis velit id lobortis. Vivamus eu libero ut justo ultrices porta nec ac nibh. Nullam aliquam, metus nec facilisis volutpat, leo nibh egestas enim, ac facilisis mauris nibh quis urna. Nullam at fringilla ligula, non consequat mauris.</p>
                 <p>Vestibulum vel purus vel ipsum tempus eleifend. Aliquam magna ex, malesuada vitae elit nec, aliquet venenatis nisl. Nulla non velit lacus. Quisque a velit vel augue condimentum tristique. Donec pulvinar varius erat pharetra pulvinar. Phasellus bibendum sollicitudin auctor. Vestibulum venenatis semper sapien, at fermentum nibh convallis eu. Integer laoreet vehicula libero quis suscipit. Duis feugiat ante tortor, vitae semper arcu rhoncus mollis. Nunc porta sed lacus a fringilla. Proin pellentesque, libero nec hendrerit dapibus, nisi nisi tempor tellus, vitae pellentesque libero magna eu tortor. Sed venenatis commodo pretium. Ut laoreet eu lectus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
-
         </div>
+    </section>  
+
+    <section id="second">
+
+    </section>  
+
+    <section id="third">
 
     </section>  
 

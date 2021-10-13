@@ -57,7 +57,7 @@
                 "field": "Emissions",
                 "type": "quantitative",
                 "scale": {
-                    "scheme": "reds"
+                    "scheme": "blues"
                 }
             },
             "tooltip": [{"field": "Entity", "type": "nominal", "title": "Country" },
