@@ -12,7 +12,8 @@
             "x":{
               "field": "Year",
               "type": "temporal",
-              "axis": {"title": ""}
+              "axis": {"title": ""},
+              "scale": {"domain": {"param": "brush"}}
             },
             "y":{
                 "field": "Emissions",
