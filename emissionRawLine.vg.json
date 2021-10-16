@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "/data/annual-co2-emissions-global.csv"
+    },
+    "vconcat":[
+      {
+        "width": 800,
+        "height": 500,
+        "mark": "area",
+        "encoding": {
+            "x":{
+              "field": "Year",
+              "type": "temporal",
+              "axis": {"title": ""}
+            },
+            "y":{
+                "field": "Emissions",
+                "type": "quantitative",
+                "title": "Emissions (Million Tonnes)",
+                "axis": {"tickCount": 10, "format": ".1s"}
+            }
+        }
+      },
+      {
+        "width": 800,
+        "height": 90,
+        "mark": "area",
+        "params": [{
+          "name": "brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }],
+        "encoding": {
+            "x":{
+              "field": "Year",
+              "type": "temporal"
+            },
+            "y":{
+                "field": "Emissions",
+                "type": "quantitative",
+                "title": "Emissions (Million Tonnes)",
+                "axis": {"tickCount": 2, "format": ".1s", "grid": false}
+            }
+        }
+      }
+    ]
+}
