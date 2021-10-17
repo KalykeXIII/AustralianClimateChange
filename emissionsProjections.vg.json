@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "layer":[
+      {
+        "data": {
+      "url": "https://raw.githubusercontent.com/KalykeXIII/AustralianClimateChange/main/data/australia-co2.csv"
+    },
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "ordinal"},
+      "y": {"field": "Emissions", "type": "quantitative"},
+      "tooltip": [{"field": "Year", "type": "nominal", "title": "Year" },
+                  {"field": "Emissions", "type": "nominal", "title": "Emissions (MtCO2)" }
+      ]
+        }
+      },
+      {
+        "data": {
+      "url": "https://raw.githubusercontent.com/KalykeXIII/AustralianClimateChange/main/data/australia-co2-projection.csv"
+    },
+    "selection": {
+      "projection_highlight": {
+        "type": "multi",
+        "fields": ["Projection"],
+        "bind": "legend"
+    }
+    },
+    "mark": {
+      "type": "line",
+      "strokeDash": {"expr": "[8,8]"}
+    },
+    "encoding": {
+      "x": {"field": "Year", "type": "ordinal"},
+      "y": {"field": "Emissions", "type": "quantitative"},
+      "color": {"field": "Projection", "type": "nominal",   "scale": {"range": ["orange", "green", "red", "#ffd54a"]}},
+      "opacity": {
+        "condition": {"selection": "projection_highlight", "value": 0.6},
+        "value": 0.2
+        },
+      "tooltip": [{"field": "Projection", "type": "nominal", "title": "Projection" },
+                  {"field": "Year", "type": "nominal", "title": "Year" },
+                  {"field": "Emissions", "type": "nominal", "title": "Emissions (MtCO2)" }]
+        }
+      }
+    ]
+  }
