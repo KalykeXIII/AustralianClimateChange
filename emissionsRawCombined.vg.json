@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "vconcat": [
+  {
+    "width": 800,
+    "height": 450,
+    "projection": {
+        "type": "equalEarth"
+    },
+    "layer":[
+    {
+        "data": {
+            "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+            "format": {"type": "topojson", "feature": "countries"}
+        },
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.4},
+        "encoding": {
+        "color": {"value": "#eee"}, 
+        "tooltip": [{"field": "properties.name", "type": "nominal", "title": "Country" }]
+        }
+    },
+    {
+        "data": {
+            "url": "https://raw.githubusercontent.com/KalykeXIII/AustralianClimateChange/main/data/annual-co2-emissions-per-country.csv"
+        },
+        "transform": [
+            {
+                "lookup": "Entity",
+                "from": {
+                    "data": {
+                        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json",
+                        "format": {"type": "topojson", "feature": "countries"}
+                    },
+                    "key": "properties.name"
+                },
+                "as": "country"
+            },
+            {"filter": "datum.Year == brush.Year"}  
+        ],
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.4},
+        "encoding": {
+            "shape": {"field": "country", "type":"geojson"},
+            "color": {
+                "field": "Emissions",
+                "type": "quantitative",
+                "scale": {
+                    "scheme": "blues"
+                },
+                "legend": {
+                  "title": "Emissions",
+                  "format": ".3s",
+                  "padding": 5,
+                  "orient": "top-left",
+                  "direction": "vertical",
+                  "offset": -10
+                }
+            },
+            "tooltip": [{"field": "Entity", "type": "nominal", "title": "Country" },
+                        {"field": "Year", "type": "quantitative", "title": "Year"},
+                        {"field": "Emissions", "type": "quantitative", "title": "Emissions"}]
+        }
+      }
+    ]
+  },
+  {
+    "width": 800,
+    "height": 90,
+    "data": {
+    "url": "https://raw.githubusercontent.com/KalykeXIII/AustralianClimateChange/main/data/annual-co2-emissions-global.csv"
+        },
+    "encoding": {
+    "x":{
+        "field": "Year",
+        "type": "quantitative",
+        "axis": {"format": ".0f"},
+        "scale": {
+          "domain": [1918, 2020]
+          }
+        }},
+  "layer": [
+  {
+    "mark": "line",
+    "encoding": {
+        "y":{
+            "field": "Emissions",
+            "type": "quantitative",
+            "title": "Emissions (Million Tonnes)",
+            "axis": {"tickCount": 2, "format": ".1s", "grid": false}
+        }
+    }
+  },
+  {"params": [{
+      "name": "brush",
+      "value": 2019,
+      "select": {
+        "type": "point",
+        "encodings": ["x"],
+        "nearest": true
+      }
+    }],
+    "mark": {"type": "point"},
+    "encoding": {
+      "y": {"field": "Emissions", "type": "quantitative"},
+      "opacity": {"value": 0}
+    }
+  },
+  {
+    "transform": [
+      {"filter": {
+        "and": ["brush.Year", {"param": "brush"}]
+      }}
+    ],
+    "mark": "rule"
+  },
+  {
+    "transform": [
+      {"filter": {
+        "and": ["brush.Year", {"param": "brush"}]
+      }}
+    ],
+    "mark": "text",
+    "encoding": {
+      "y": {"value": 10},
+      "text": {"field": "Year", "type": "quantitative", "format": ".0f"}
+    }
+  }
+  ]
+ }
+],
+"config": {
+  "text": {"align": "right", "dy": 5, "dx": -5, "fontSize": 14}, 
+  "style": {
+    "cell": {
+      "stroke": "transparent"
+  }
+}}
+}
