@@ -1,5 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "whitesmoke",
     "layer":[
       {
         "data": {
@@ -7,8 +8,8 @@
     },
     "mark": "line",
     "encoding": {
-      "x": {"field": "Year", "type": "ordinal"},
-      "y": {"field": "Emissions", "type": "quantitative"},
+      "x": {"field": "Year", "type": "ordinal", "axis": {"labelAngle": 60}},
+      "y": {"field": "Emissions", "type": "quantitative", "title": "Emissions (MtCO2)"},
       "tooltip": [{"field": "Year", "type": "nominal", "title": "Year" },
                   {"field": "Emissions", "type": "nominal", "title": "Emissions (MtCO2)" }
       ]

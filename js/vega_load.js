@@ -14,6 +14,6 @@ vegaEmbed("#changeEmissions", change).then(function(result) {
 }).catch(console.error);
 
 var project = "emissionsProjections.vg.json";
-vegaEmbed("#projectEmissions", change).then(function(result) {
+vegaEmbed("#projectEmissions", project).then(function(result) {
 // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
 }).catch(console.error);
