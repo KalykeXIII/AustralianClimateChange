@@ -57,6 +57,7 @@
                 }
             },
             "tooltip": [{"field": "Entity", "type": "nominal", "title": "Country" },
+                        {"field": "Ranking", "type": "quantitative", "title": "Ranking"},
                         {"field": "Year", "type": "quantitative", "title": "Year"},
                         {"field": "Emissions", "type": "quantitative", "title": "Emissions", "format": ".3s"}]
         }
