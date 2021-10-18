@@ -63,7 +63,8 @@ body {
 }
 
 .button {
-    background-color: #eda545;
+    background-color: #e7be88;
+    border: #000;
     border: none;
     color: black;
     padding: 20px;
@@ -74,6 +75,10 @@ body {
     margin: 4px 2px;
     border-radius: 8px;
   }
+
+  hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid black;
+    margin: 1em 0; padding: 0; }
 /*------------------------------------------------------------------*/
 /*   IE10 in Windows 8 and Windows Phone 8 Bug fix
 /*-----------------------------------------------------------------*/

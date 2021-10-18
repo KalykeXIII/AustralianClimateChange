@@ -7,7 +7,7 @@
     {
     "name": "comp",
     "value": "China",
-    "bind": {"input": "select", "options": ["United States", "Japan", "Germany", "China", "France", "India", "Russia"], "name": "Comparison Country: "}
+    "bind": {"input": "select", "options": ["USA", "Japan", "Germany", "China", "France", "India", "Russia"], "name": "Comparison Country: "}
   }],
   "transform": [
         {"filter": "datum.Entity == 'Australia' || datum.Entity == comp"},
