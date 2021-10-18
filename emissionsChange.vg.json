@@ -6,9 +6,15 @@
   "params": [
     {
     "name": "comp",
-    "value": "China",
+    "value": "France",
     "bind": {"input": "select", "options": ["USA", "Japan", "Germany", "China", "France", "India", "Russia"], "name": "Comparison Country: "}
   }],
+  "selection": {
+    "entity_highlight": {
+      "type": "multi",
+      "fields": ["Entity"],
+      "bind": "legend"
+  }},
   "transform": [
         {"filter": "datum.Entity == 'Australia' || datum.Entity == comp"},
         {"filter": "datum.Year <= 2019 && datum.Year >= 1999"}  
@@ -41,6 +47,10 @@
       "title": "Country",
       "scale": {"range": ["orange", "#ffde4a"]}
     },
+    "opacity": {
+      "condition": {"selection": "entity_highlight", "value": 0.8},
+      "value": 0.2
+      },
     "tooltip": [{"field": "Entity", "type": "nominal", "title": "Country" },
                 {"field": "Year", "type": "quantitative", "title": "Year"},
                 {"field": "Growth", "type": "quantitative", "title": "Emissions (% change from previous year)"}]

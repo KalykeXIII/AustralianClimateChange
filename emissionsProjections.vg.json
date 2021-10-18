@@ -33,7 +33,7 @@
     "encoding": {
       "x": {"field": "Year", "type": "ordinal"},
       "y": {"field": "Emissions", "type": "quantitative"},
-      "color": {"field": "Projection", "type": "nominal",   "scale": {"range": ["orange", "green", "red", "#ffd54a"]}},
+      "color": {"field": "Projection", "type": "nominal",   "scale": {"range": ["red", "green", "orange", "#ffd54a"]}},
       "opacity": {
         "condition": {"selection": "projection_highlight", "value": 0.6},
         "value": 0.2
